@@ -1,0 +1,125 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.navbar .project-subnav {
+  display: none;
+  list-style: none;
+}
+
+.navbar .global-nav-first {
+  margin-left: 0;
+  transition: margin-left 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+html.plugin-id-basicrhi .navbar .project-subnav-basicrhi,
+body.plugin-id-basicrhi .navbar .project-subnav-basicrhi,
+html.docs-plugin-id-basicrhi .navbar .project-subnav-basicrhi,
+body.docs-plugin-id-basicrhi .navbar .project-subnav-basicrhi {
+  display: flex;
+}
+
+html.plugin-id-opengraph .navbar .project-subnav-opengraph,
+body.plugin-id-opengraph .navbar .project-subnav-opengraph,
+html.docs-plugin-id-opengraph .navbar .project-subnav-opengraph,
+body.docs-plugin-id-opengraph .navbar .project-subnav-opengraph {
+  display: flex;
+}
+
+html.plugin-id-foundry .navbar .project-subnav-foundry,
+body.plugin-id-foundry .navbar .project-subnav-foundry,
+html.docs-plugin-id-foundry .navbar .project-subnav-foundry,
+body.docs-plugin-id-foundry .navbar .project-subnav-foundry {
+  display: flex;
+}
+
+html.plugin-id-basicrhi .navbar .global-nav-first,
+body.plugin-id-basicrhi .navbar .global-nav-first,
+html.docs-plugin-id-basicrhi .navbar .global-nav-first,
+body.docs-plugin-id-basicrhi .navbar .global-nav-first,
+html.plugin-id-opengraph .navbar .global-nav-first,
+body.plugin-id-opengraph .navbar .global-nav-first,
+html.docs-plugin-id-opengraph .navbar .global-nav-first,
+body.docs-plugin-id-opengraph .navbar .global-nav-first,
+html.plugin-id-foundry .navbar .global-nav-first,
+body.plugin-id-foundry .navbar .global-nav-first,
+html.docs-plugin-id-foundry .navbar .global-nav-first,
+body.docs-plugin-id-foundry .navbar .global-nav-first {
+  margin-left: clamp(8rem, 18vw, 20rem);
+  position: relative;
+  padding-left: 1.1rem;
+}
+
+html.plugin-id-basicrhi .navbar .global-nav-first::before,
+body.plugin-id-basicrhi .navbar .global-nav-first::before,
+html.docs-plugin-id-basicrhi .navbar .global-nav-first::before,
+body.docs-plugin-id-basicrhi .navbar .global-nav-first::before,
+html.plugin-id-opengraph .navbar .global-nav-first::before,
+body.plugin-id-opengraph .navbar .global-nav-first::before,
+html.docs-plugin-id-opengraph .navbar .global-nav-first::before,
+body.docs-plugin-id-opengraph .navbar .global-nav-first::before,
+html.plugin-id-foundry .navbar .global-nav-first::before,
+body.plugin-id-foundry .navbar .global-nav-first::before,
+html.docs-plugin-id-foundry .navbar .global-nav-first::before,
+body.docs-plugin-id-foundry .navbar .global-nav-first::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 1.35rem;
+  background: var(--ifm-color-emphasis-300);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar .global-nav-first {
+    transition: none;
+  }
+}
+
+@media (min-width: 997px) {
+  .navbar .navbar__brand {
+    position: relative;
+    margin-right: 0.95rem;
+    padding-right: 0.95rem;
+  }
+
+  .navbar .navbar__brand::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 1.35rem;
+    background: var(--ifm-color-emphasis-300);
+  }
+}

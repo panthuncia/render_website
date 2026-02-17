@@ -1,0 +1,239 @@
+import {themes as prismThemes} from 'prism-react-renderer';
+import type {Config} from '@docusaurus/types';
+import type * as Preset from '@docusaurus/preset-classic';
+
+// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
+const config: Config = {
+  title: 'Render Stack Docs',
+  tagline: 'BasicRHI, OpenRenderGraph, and Foundry Engine',
+  favicon: 'img/favicon.ico',
+
+  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
+  future: {
+    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+  },
+
+  // Set the production url of your site here
+  url: 'https://your-docusaurus-site.example.com',
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: '/',
+
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
+  organizationName: 'matth', // Usually your GitHub org/user name.
+  projectName: 'render_website', // Usually your repo name.
+
+  onBrokenLinks: 'throw',
+
+  // Even if you don't use internationalization, you can use this field to set
+  // useful metadata like html lang. For example, if your site is Chinese, you
+  // may want to replace "en" with "zh-Hans".
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en'],
+  },
+
+  presets: [
+    [
+      'classic',
+      {
+        docs: false,
+        blog: {
+          showReadingTime: true,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // Useful options to enforce blogging best practices
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+        },
+        theme: {
+          customCss: './src/css/custom.css',
+        },
+      } satisfies Preset.Options,
+    ],
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'basicrhi',
+        path: 'docs-basicrhi',
+        routeBasePath: 'basicrhi',
+        sidebarPath: './sidebars.basicrhi.ts',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'opengraph',
+        path: 'docs-opengraph',
+        routeBasePath: 'opengraph',
+        sidebarPath: './sidebars.opengraph.ts',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'foundry',
+        path: 'docs-foundry',
+        routeBasePath: 'foundry',
+        sidebarPath: './sidebars.foundry.ts',
+      },
+    ],
+  ],
+
+  themeConfig: {
+    // Replace with your project's social card
+    image: 'img/docusaurus-social-card.jpg',
+    colorMode: {
+      respectPrefersColorScheme: true,
+    },
+    navbar: {
+      title: 'Render Stack',
+      logo: {
+        alt: 'Render Stack Logo',
+        src: 'img/logo.svg',
+      },
+      items: [
+        {
+          label: 'About',
+          to: '/basicrhi/about',
+          className: 'project-subnav project-subnav-basicrhi',
+          position: 'left',
+        },
+        {
+          label: 'Docs',
+          to: '/basicrhi/docs',
+          className: 'project-subnav project-subnav-basicrhi',
+          position: 'left',
+        },
+        {
+          label: 'Tutorial',
+          to: '/basicrhi/tutorial',
+          className: 'project-subnav project-subnav-basicrhi',
+          position: 'left',
+        },
+        {
+          label: 'About',
+          to: '/opengraph/about',
+          className: 'project-subnav project-subnav-opengraph',
+          position: 'left',
+        },
+        {
+          label: 'Docs',
+          to: '/opengraph/docs',
+          className: 'project-subnav project-subnav-opengraph',
+          position: 'left',
+        },
+        {
+          label: 'Tutorial',
+          to: '/opengraph/tutorial',
+          className: 'project-subnav project-subnav-opengraph',
+          position: 'left',
+        },
+        {
+          label: 'About',
+          to: '/foundry/about',
+          className: 'project-subnav project-subnav-foundry',
+          position: 'left',
+        },
+        {
+          label: 'Docs',
+          to: '/foundry/docs',
+          className: 'project-subnav project-subnav-foundry',
+          position: 'left',
+        },
+        {
+          label: 'Tutorial',
+          to: '/foundry/tutorial',
+          className: 'project-subnav project-subnav-foundry',
+          position: 'left',
+        },
+        {
+          to: '/basicrhi/about',
+          label: 'BasicRHI',
+          activeBasePath: '/basicrhi',
+          className: 'global-nav-item global-nav-first',
+          position: 'left',
+        },
+        {
+          to: '/opengraph/about',
+          label: 'OpenRenderGraph',
+          activeBasePath: '/opengraph',
+          className: 'global-nav-item',
+          position: 'left',
+        },
+        {
+          to: '/foundry/about',
+          label: 'Foundry Engine',
+          activeBasePath: '/foundry',
+          className: 'global-nav-item',
+          position: 'left',
+        },
+        {
+          to: '/blog',
+          label: 'Blog',
+          className: 'global-nav-item',
+          position: 'left',
+        },
+      ],
+    },
+    footer: {
+      style: 'dark',
+      links: [
+        {
+          title: 'Projects',
+          items: [
+            {
+              label: 'BasicRHI',
+              to: '/basicrhi/about',
+            },
+            {
+              label: 'OpenRenderGraph',
+              to: '/opengraph/about',
+            },
+            {
+              label: 'Foundry Engine',
+              to: '/foundry/about',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'Blog',
+              to: '/blog',
+            },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'GitHub',
+              href: 'https://github.com/matth',
+            },
+          ],
+        },
+      ],
+      copyright: `Copyright © ${new Date().getFullYear()} Render Stack. Built with Docusaurus.`,
+    },
+    prism: {
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
+    },
+  } satisfies Preset.ThemeConfig,
+};
+
+export default config;
