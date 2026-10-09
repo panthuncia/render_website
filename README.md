@@ -11,9 +11,9 @@ npm ci
 npm start
 ```
 
-The development server uses http://localhost:3000/render_website/ and reloads when source files change.
+The development server uses http://localhost:3000/blog/ and reloads when source files change.
 
-The homepage is the blog index. The previous project landing page is available at `/render_website/projects`.
+The homepage is the blog index. The previous project landing page is available at `/blog/projects/`.
 
 ## Checks and production preview
 
@@ -48,7 +48,18 @@ The first post is [Fixing Skyrim's render pipeline (drawcall limit fix)](blog/20
 
 ## Hosting configuration
 
-The default canonical URL and base path target `https://panthuncia.github.io/render_website/`. This is a configuration default, not a claim that the site has been deployed. Any static host can serve `build/`.
+The default canonical URL and base path target `https://panthuncia.github.io/blog/`. This is a configuration default, not a claim that the site has been deployed. Any static host can serve `build/`.
+
+GitHub Pages project URLs use the deployment repository's name. The source repository remains `panthuncia/render_website`, while `npm run deploy` targets the `gh-pages` branch of `panthuncia/blog`. Create that repository with push access before deploying. The deployment command replaces generated content on its `gh-pages` branch.
+
+After checking and committing the source changes, deploy from PowerShell:
+
+```powershell
+$env:USE_SSH = 'true'
+npm run deploy
+```
+
+In the **blog** repository's **Settings > Pages**, select **Deploy from a branch**, choose **gh-pages** and **/ (root)**, and save. The existing CI workflow in the source repository only validates builds; it does not publish. Changing `baseUrl` alone cannot make the `render_website` repository's Pages site publish at `/blog/`.
 
 For a custom domain, set `SITE_URL` to the origin and `SITE_BASE_URL` to `/` before building. For example, in PowerShell:
 

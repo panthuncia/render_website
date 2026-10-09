@@ -23,12 +23,13 @@ const config: Config = {
   url: process.env.SITE_URL ?? 'https://panthuncia.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: process.env.SITE_BASE_URL ?? '/render_website/',
+  baseUrl: process.env.SITE_BASE_URL ?? '/blog/',
+  trailingSlash: true,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'panthuncia', // GitHub repository owner.
-  projectName: 'render_website', // Usually your repo name.
+  projectName: 'blog', // GitHub Pages deployment repository; source stays in render_website.
 
   onBrokenLinks: 'throw',
 
