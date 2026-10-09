@@ -15,14 +15,14 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: process.env.SITE_URL ?? 'https://panthuncia.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: process.env.SITE_BASE_URL ?? '/render_website/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'matth', // Usually your GitHub org/user name.
+  organizationName: 'panthuncia', // GitHub repository owner.
   projectName: 'render_website', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -46,10 +46,8 @@ const config: Config = {
             type: ['rss', 'atom'],
             xslt: true,
           },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/panthuncia/render_website/edit/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -222,7 +220,7 @@ const config: Config = {
           items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/matth',
+              href: 'https://github.com/panthuncia/render_website',
             },
           ],
         },
