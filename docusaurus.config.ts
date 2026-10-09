@@ -6,12 +6,17 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'Render Stack Docs',
-  tagline: 'BasicRHI, OpenRenderGraph, and Foundry Engine',
+  tagline: 'BasicRHI, OpenRenderGraph, and SealLOD Engine',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    faster: {
+      // Use Webpack to avoid Rspack module-graph panics during development.
+      rspackBundler: false,
+      rspackPersistentCache: false,
+    },
   },
 
   // Set the production url of your site here
@@ -41,6 +46,7 @@ const config: Config = {
       {
         docs: false,
         blog: {
+          routeBasePath: '/',
           showReadingTime: true,
           feedOptions: {
             type: ['rss', 'atom'],
@@ -82,10 +88,10 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'foundry',
-        path: 'docs-foundry',
-        routeBasePath: 'foundry',
-        sidebarPath: './sidebars.foundry.ts',
+        id: 'SealLOD',
+        path: 'docs-SealLOD',
+        routeBasePath: 'SealLOD',
+        sidebarPath: './sidebars.SealLOD.ts',
       },
     ],
   ],
@@ -141,20 +147,20 @@ const config: Config = {
         },
         {
           label: 'About',
-          to: '/foundry/about',
-          className: 'project-subnav project-subnav-foundry',
+          to: '/SealLOD/about',
+          className: 'project-subnav project-subnav-SealLOD',
           position: 'left',
         },
         {
           label: 'Docs',
-          to: '/foundry/docs',
-          className: 'project-subnav project-subnav-foundry',
+          to: '/SealLOD/docs',
+          className: 'project-subnav project-subnav-SealLOD',
           position: 'left',
         },
         {
           label: 'Tutorial',
-          to: '/foundry/tutorial',
-          className: 'project-subnav project-subnav-foundry',
+          to: '/SealLOD/tutorial',
+          className: 'project-subnav project-subnav-SealLOD',
           position: 'left',
         },
         {
@@ -172,14 +178,14 @@ const config: Config = {
           position: 'left',
         },
         {
-          to: '/foundry/about',
-          label: 'Foundry Engine',
-          activeBasePath: '/foundry',
+          to: '/SealLOD/about',
+          label: 'SealLOD Engine',
+          activeBasePath: '/SealLOD',
           className: 'global-nav-item',
           position: 'left',
         },
         {
-          to: '/blog',
+          to: '/',
           label: 'Blog',
           className: 'global-nav-item',
           position: 'left',
@@ -201,8 +207,8 @@ const config: Config = {
               to: '/opengraph/about',
             },
             {
-              label: 'Foundry Engine',
-              to: '/foundry/about',
+              label: 'SealLOD Engine',
+              to: '/SealLOD/about',
             },
           ],
         },
@@ -211,7 +217,7 @@ const config: Config = {
           items: [
             {
               label: 'Blog',
-              to: '/blog',
+              to: '/',
             },
           ],
         },

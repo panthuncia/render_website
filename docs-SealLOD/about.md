@@ -2,8 +2,8 @@
 sidebar_position: 1
 ---
 
-# About Foundry Engine
+# About SealLOD Engine
 
-Foundry Engine is a research rendering engine built on top of OpenRenderGraph.
+SealLOD Engine is a research rendering engine built on top of OpenRenderGraph.
 
 Use this section for engine goals, experimentation areas, and system architecture notes.

@@ -53,10 +53,10 @@ body.docs-plugin-id-opengraph .navbar .project-subnav-opengraph {
   display: flex;
 }
 
-html.plugin-id-foundry .navbar .project-subnav-foundry,
-body.plugin-id-foundry .navbar .project-subnav-foundry,
-html.docs-plugin-id-foundry .navbar .project-subnav-foundry,
-body.docs-plugin-id-foundry .navbar .project-subnav-foundry {
+html.plugin-id-SealLOD .navbar .project-subnav-SealLOD,
+body.plugin-id-SealLOD .navbar .project-subnav-SealLOD,
+html.docs-plugin-id-SealLOD .navbar .project-subnav-SealLOD,
+body.docs-plugin-id-SealLOD .navbar .project-subnav-SealLOD {
   display: flex;
 }
 
@@ -68,10 +68,10 @@ html.plugin-id-opengraph .navbar .global-nav-first,
 body.plugin-id-opengraph .navbar .global-nav-first,
 html.docs-plugin-id-opengraph .navbar .global-nav-first,
 body.docs-plugin-id-opengraph .navbar .global-nav-first,
-html.plugin-id-foundry .navbar .global-nav-first,
-body.plugin-id-foundry .navbar .global-nav-first,
-html.docs-plugin-id-foundry .navbar .global-nav-first,
-body.docs-plugin-id-foundry .navbar .global-nav-first {
+html.plugin-id-SealLOD .navbar .global-nav-first,
+body.plugin-id-SealLOD .navbar .global-nav-first,
+html.docs-plugin-id-SealLOD .navbar .global-nav-first,
+body.docs-plugin-id-SealLOD .navbar .global-nav-first {
   margin-left: clamp(8rem, 18vw, 20rem);
   position: relative;
   padding-left: 1.1rem;
@@ -85,10 +85,10 @@ html.plugin-id-opengraph .navbar .global-nav-first::before,
 body.plugin-id-opengraph .navbar .global-nav-first::before,
 html.docs-plugin-id-opengraph .navbar .global-nav-first::before,
 body.docs-plugin-id-opengraph .navbar .global-nav-first::before,
-html.plugin-id-foundry .navbar .global-nav-first::before,
-body.plugin-id-foundry .navbar .global-nav-first::before,
-html.docs-plugin-id-foundry .navbar .global-nav-first::before,
-body.docs-plugin-id-foundry .navbar .global-nav-first::before {
+html.plugin-id-SealLOD .navbar .global-nav-first::before,
+body.plugin-id-SealLOD .navbar .global-nav-first::before,
+html.docs-plugin-id-SealLOD .navbar .global-nav-first::before,
+body.docs-plugin-id-SealLOD .navbar .global-nav-first::before {
   content: '';
   position: absolute;
   left: 0;

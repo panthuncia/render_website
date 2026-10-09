@@ -13,6 +13,8 @@ npm start
 
 The development server uses http://localhost:3000/render_website/ and reloads when source files change.
 
+The homepage is the blog index. The previous project landing page is available at `/render_website/projects`.
+
 ## Checks and production preview
 
 ```sh
@@ -31,7 +33,7 @@ The build generates `build/`; the preview serves that output locally. Broken int
 | `docs-basicrhi/` | BasicRHI documentation |
 | `docs-opengraph/` | OpenRenderGraph documentation |
 | `docs-SealLOD/` | SealLOD Engine documentation |
-| `src/pages/` | Homepage and standalone pages |
+| `src/pages/` | Project landing page and standalone pages; the blog plugin provides the homepage |
 | `src/components/`, `src/css/` | Shared UI and styles |
 | `static/` | Assets copied directly to the site |
 | `docusaurus.config.ts`, `sidebars.*.ts` | Site configuration and project navigation |
@@ -63,5 +65,7 @@ Base paths must begin and end with `/`. CI validates the build but does not publ
 Use npm and commit `package-lock.json` alongside dependency changes. Keep all `@docusaurus/*` packages at the same version. Run type checking and a production build after upgrades, and review `npm audit` before deciding how to address advisories.
 
 TypeScript is kept on 5.9.3 because Docusaurus 3.10.2's shared configuration uses `baseUrl`, which TypeScript 7 has removed. The `@docusaurus/faster` dependency supports the existing `future.v4` setting.
+
+The site explicitly uses Webpack instead of Rspack because Rspack has crashed during development with a missing MDX module-graph entry. After changing bundler settings, stop the development server, run `npm run clear`, and restart `npm start`.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md), [AGENTS.md](AGENTS.md), and [SECURITY.md](SECURITY.md). No repository-wide license has been selected; do not assume permission to redistribute its code or articles.
