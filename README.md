@@ -15,6 +15,8 @@ The development server uses http://localhost:3000/blog/ and reloads when source 
 
 The homepage is the blog index. The previous project landing page is available at `/blog/projects/`.
 
+Click an image in a post or documentation page to enlarge it. The viewer supports zoom buttons, scrolling to pan, and closing with Escape or a click outside. Images can also be opened with Enter or Space when focused. Images already inside links retain their link behavior.
+
 ## Checks and production preview
 
 ```sh

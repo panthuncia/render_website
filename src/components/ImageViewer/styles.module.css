@@ -1,0 +1,79 @@
+.dialog {
+  position: fixed;
+  top: 4dvh;
+  bottom: auto;
+  margin: 0 auto;
+  width: 96vw;
+  max-width: 96vw;
+  max-height: 92dvh;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  color: var(--ifm-font-color-base);
+  background: var(--ifm-background-color);
+}
+
+.dialog::backdrop {
+  background: rgb(0 0 0 / 85%);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  max-height: 92dvh;
+}
+
+.toolbar {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.toolbar button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--ifm-color-emphasis-400);
+  border-radius: 4px;
+  background: var(--ifm-background-surface-color);
+  color: inherit;
+  cursor: pointer;
+}
+
+.toolbar button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.toolbar output {
+  flex: 0 0 48px;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.close {
+  margin-left: auto;
+}
+
+.stage {
+  min-height: 0;
+  overflow: auto;
+  padding: 16px;
+  overscroll-behavior: contain;
+}
+
+.stage img {
+  display: block;
+  height: auto;
+  margin: auto;
+}
+
+.caption {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+}
